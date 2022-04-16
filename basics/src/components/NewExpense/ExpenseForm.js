@@ -75,6 +75,7 @@ const ExpenseForm = () => {
                 </div>
             </div>
             <div className="new-expense__actions">
+                
                 <button>Add Expense</button>
             </div>
         </form>
