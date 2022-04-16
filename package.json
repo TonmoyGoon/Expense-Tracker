@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "basics",
   "version": "0.1.0",
   "private": true,
@@ -36,3 +37,19 @@
     ]
   }
 }
+=======
+  "name": "reactbasics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create-react-app": "^5.0.0"
+  }
+}
+>>>>>>> cd5f5564b63e9240a0181b0a58d7f1cb0bfd7f8f
