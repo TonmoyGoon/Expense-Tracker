@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = (props) => {
-    const [enteredTitle, setEnteredTitle] = useState("")  // Always initializes with string ("") whether number/date
-    const [enteredAmount, setEnteredAmount] = useState("")
-    const [enteredDate, setEnteredDate] = useState("")
+const ExpenseForm = () => {
+    const[enteredTitle,setEnteredTitle]= useState("")  // Always initializes with string ("") whether number/date
+    const[enteredAmount,setEnteredAmount]= useState("")
+    const[enteredDate,setEnteredDate]= useState("")
 
     // const [userInput,setUserInput] = useState({
     //     enteredTitle:"",
@@ -12,14 +12,14 @@ const ExpenseForm = (props) => {
     //     enteredDate:""
     // })
 
-    const titleChangeHandler = (e) => {
+    const titleChangeHandler = (e) =>{
         setEnteredTitle(e.target.value);
 
         // setUserInput({
         //     ...userInput,
         //     enteredTitle:e.target.value
         // })
-
+        
         // Use the below code instead
 
         // setUserInput((prevState) =>{   // It takes time to update the state.so this gives the latest version.because here it depends on previous state.
@@ -27,7 +27,7 @@ const ExpenseForm = (props) => {
         // })
     }
 
-    const amountChangeHandler = (e) => {
+    const amountChangeHandler = (e) =>{
         setEnteredAmount(e.target.value);
         // setUserInput({
         //     ...userInput,
@@ -35,7 +35,7 @@ const ExpenseForm = (props) => {
         // })
     }
 
-    const dateChangeHandler = (e) => {
+    const dateChangeHandler = (e) =>{
         setEnteredDate(e.target.value);
         // setUserInput({
         //     ...userInput,
@@ -43,39 +43,23 @@ const ExpenseForm = (props) => {
         // })
     }
 
-    const submitHandler = (e) => {
-        e.preventDefault();
-
-        const expenseData = {
-            title: enteredTitle,
-            amount: enteredAmount,
-            date: new Date(enteredDate)
-        }
-
-        props.onSaveExpenseData(expenseData)
-        setEnteredTitle("")
-        setEnteredAmount("")
-        setEnteredDate("")
-    }
-
     return (
-        <form onSubmit={submitHandler}>
+        <form>
             <div className="new-expense__controls">
                 <div className="new-expense__controls">
                     <label>Title</label>
-                    <input type="text" value={enteredTitle} onChange={titleChangeHandler}></input>
+                    <input type="text" onChange={titleChangeHandler}></input>
                 </div>
                 <div className="new-expense__controls">
                     <label>Amount</label>
-                    <input type="number" value={enteredAmount} min=".01" step=".01" onChange={amountChangeHandler}></input>
+                    <input type="number" min=".01" step=".01" onChange={amountChangeHandler}></input>
                 </div>
                 <div className="new-expense__controls">
                     <label>Date</label>
-                    <input type="date" value={enteredDate} min="2022-01-01" max="2024-06-15" onChange={dateChangeHandler}></input>
+                    <input type="date" min="2022-01-01" max="2024-06-15" onChange={dateChangeHandler}></input>
                 </div>
             </div>
             <div className="new-expense__actions">
-                
                 <button>Add Expense</button>
             </div>
         </form>
