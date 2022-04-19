@@ -9,7 +9,7 @@ const ExpenseItem = (props) => {
     // returns an array with 2 elements in it.    1) Current value   2) functions for updating the value
     // useState executes the main function again when setTitle function is called
     // executes separately for each component
-    console.log("Expense item evaluated by react");  
+    console.log("Expense item evaluated by react");
 
     const clickHandler = () => {
         setTitle("Updated");
